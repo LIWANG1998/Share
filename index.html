@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgdiv {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 394px;
+            background-image: url("./images/tft.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+
+        .clip-shape {
+            width: 150px;
+            height: 150px;
+            outline: 300px solid rgba(0, 0, 0, .7);
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgdiv">
+        <div class="clip-shape"></div>
+    </div>
+</body>
+
+</html>

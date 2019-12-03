@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgdiv {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, rgb(0, 238, 255), rgb(255, 0, 255));
+            width: 850px;
+            height: 600px;
+            clip-path: url(#svgPath);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://segmentfault.com/a/1190000004393817"
+        target="_blank">https://segmentfault.com/a/1190000004393817</a>
+    <div class="imgdiv">
+    </div>
+    <svg height="0" width="0">
+        <clipPath id="svgPath">
+            <path fill="#FFFFFF" stroke="#000000" stroke-width="1.5794" stroke-miterlimit="10" d="M215,100.3c97.8-32.6,90.5-71.9,336-77.6
+                  c92.4-2.1,98.1,81.6,121.8,116.4c101.7,149.9,53.5,155.9,14.7,178c-96.4,54.9,5.4,269-257,115.1c-57-33.5-203,46.3-263.7,20.1
+                  c-33.5-14.5-132.5-45.5-95-111.1C125.9,246.6,98.6,139.1,215,100.3z"></path>
+        </clipPath>
+    </svg>
+    <svg height="0" width="0">
+        <clipPath id="svgPath">
+            <text x="0" y="300" textLength="800px" font-size="230px" font-weight="700" font-style="italic">
+                Blossom</text>
+        </clipPath>
+    </svg>
+    <!-- lengthAdjust 调整文本的收缩或扩张方式，与textLength属性配合使用
+spacing 单个文字大小不变，只收缩或扩张间距
+spacingAndGlyphs 文字和间距一起扩张或收缩 -->
+    <svg width="450" height="200">
+        <g font-face="sans-serif">
+            <text x="0" y="20">Stretched using spacing only.</text>
+            <text x="0" y="50">Stretched using spacing and glyphs.</text>
+            <text x="0" y="80" textLength="400">Stretched using default.</text>
+            <text x="0" y="110" textLength="400" lengthAdjust="spacing">Stretched using spacing only.</text>
+            <text x="0" y="140" textLength="400" lengthAdjust="spacingAndGlyphs">Stretched using spacing and
+                glyphs.</text>
+            <text x="0" y="170" textLength="100" lengthAdjust="spacing">Shrunk using spacing only.</text>
+            <text x="0" y="200" textLength="100" lengthAdjust="spacingAndGlyphs">Shrunk using spacing and glyphs.</text>
+        </g>
+    </svg>
+</body>
+
+</html>

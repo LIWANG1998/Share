@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgdiv {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(209, 209, 209);
+            /* width: 700px;
+            height: 400px; */
+        }
+
+        .clip-shape {
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin: 10px;
+            /* padding: 5px; */
+            background: rgb(10, 77, 38);
+        }
+
+        /* 几何框 */
+        .one {
+            /* CSS 新属性 clip-path，意味裁剪路径的意思，让我们可以很便捷的生成各种几何图形。
+clip-path 通过定义特殊的路径，实现我们想要的图形。而这个路径，正是 SVG 中的 path 。 */
+            border-radius: 0 0 50% 0;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            /* clip-path: polygon(15px 0, 0 0, 0 0, 0 15px); */
+            /* clip-path: circle(100% at 0 0); */
+            /* box-shadow: 0 0 0 100px teal; */
+            /* clip-path: padding-box circle(50px at 0 100px); */
+        }
+
+        /* 基本形状 */
+        .two {
+            /* inset是矩形 */
+            clip-path: inset(50px 50px);
+            /* 内置矩形inset（上右下左的边距round上右下左圆角 */
+            /* clip-path: inset(10px 20px 30px 10px round 20px 5px 50px 0); */
+            /* 圆 */
+            /* clip-path: circle(50%); */
+            /* 1.半径 at 圆心位置 x y (px/%) */
+            /* clip-path: circle(50% at 10px 100px); */
+            /* 椭圆 */
+            /* 1.半径(x轴的半径)(y轴的半径) at 圆心位置 x y (px/%) */
+            /* clip-path: ellipse(50px 100px at 50% 50%); */
+            /* 多边形*/
+            /* 4角开始裁剪的位置(x,y)(px/%) */
+            /* clip-path: polygon(50% 0, 90% 50%, 50% 100%, 10% 50%); */
+            /* clip-path: polygon(0% 100%, 50% 0%, 100% 100%); */
+            /* clip-path: polygon(0% 38.31%, 50% 0%, 100% 38.31%, 80.86% 100%, 19.14% 100%); */
+            /* clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
+            /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); */
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://blog.csdn.net/weixin_44116302/article/details/98882841"
+        target="_blank">http://blog.csdn.net/weixin_44116302/article/details/98882841</a>
+    <br />
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path" target="_blank">
+        https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path</a>
+
+    <div class="imgdiv">
+        <div class="clip-shape one"></div>
+        <div class="clip-shape two"></div>
+        <div class="clip-shape three"></div>
+        <div class="clip-shape four"></div>
+        <div class="clip-shape five"></div>
+    </div>
+    <svg>
+        <polygon points="50,5 100,5  125,30  125,80 100,105 50,105  25,80  25,30"
+            style="stroke:#660000; fill:#9ecc33; stroke-width:4;" />
+    </svg>
+</body>
+
+</html>

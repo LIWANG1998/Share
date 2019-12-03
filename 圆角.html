@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgdiv {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 400px;
+            background: linear-gradient(rgb(0, 255, 157), rgb(25, 0, 255));
+            overflow: hidden;
+        }
+
+        .clip-shape {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.75);
+            /* 第一二个参数是偏移的意思 */
+            /* 第三个参数是模糊的意思 */
+            /* 第四个参数是扩展的意思 */
+        }
+
+        .btn {
+            width: 100px;
+            height: 60px;
+            background: pink;
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            color: white;
+        }
+
+        .btn>h1 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgdiv">
+        <div class="clip-shape">
+            <section class="btn">
+                <h1>发布</h1>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
