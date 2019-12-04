@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            height: 60px;
+            width: 1200px;
+            background: rgb(32, 143, 177);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cell {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 0);
+        }
+
+        .cells {
+            background: pink;
+            width: 100px;
+            height: 40px;
+            float: left;
+            border-radius: 20px 20px 0 0;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .hou {
+            background: white;
+            box-shadow: 1px -3px 1px 1px rgba(126, 126, 126, 0.486);
+        }
+
+        .dells {
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            box-shadow: 0 0 0 100px white;
+            /* z-index: 1; */
+        }
+
+        .dells:nth-child(1) {
+            border-radius: 0 0 21px 0;
+            left: -40px;
+        }
+
+        .dells:nth-child(2) {
+            border-radius: 0 0 0 21px;
+            left: 100px;
+        }
+
+        .dells:nth-child(3) {
+            border-radius: 0 0 21px 0;
+            left: -40px;
+            box-shadow: 0 0 0 100px pink;
+            z-index: -1;
+        }
+
+        .dells:nth-child(4) {
+            border-radius: 0 0 0 21px;
+            left: 600px;
+            box-shadow: 0 0 0 100px pink;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="cell">
+            <section class="cells hou">第一项</section>
+            <section class="cells">第二项</section>
+            <section class="cells">第三项</section>
+            <section class="cells">第四项</section>
+            <section class="cells">第五项</section>
+            <section class="cells">第六项</section>
+            <div class="jiao">
+                <section class="dells"></section>
+                <section class="dells"></section>
+                <section class="dells"></section>
+                <section class="dells"></section>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hou = 0;
+        let cellsElt = [...$(".cells", true)];
+        let dellsElt = [...$(".dells", true)];
+
+        cellsElt.forEach(function (el, index) {
+            el.onmouseenter = function () {
+                cellsElt[hou].classList.remove("hou");
+                this.classList.add("hou");
+                dellsElt[0].style.left = `${index * 100 - 40}px`;
+                dellsElt[1].style.left = `${(index + 1) * 100}px`;
+                hou = index;
+                console.log(dellsElt[0].style);
+            }
+        })
+        function $(item, istf) {
+            if (istf)
+                return document.querySelectorAll(item);
+            return document.querySelector(item);
+        }
+    </script>
+</body>
+
+</html>
